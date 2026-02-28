@@ -1,0 +1,55 @@
+<div class="surface">
+  <div class="surface-header">
+    <div class="d-flex align-items-center justify-content-between">
+      <div>
+        <div class="h5 mb-0">{{ modo() === 'editar' ? 'Editar dirección' : 'Agregar dirección' }}</div>
+        <div class="text-muted small">Relacionado a una persona (FK)</div>
+      </div>
+      <button type="button" class="btn btn-outline-light btn-sm" (click)="onCancelar()">Cerrar</button>
+    </div>
+  </div>
+
+  <div class="surface-body">
+    <form [formGroup]="form" class="row g-3" (ngSubmit)="onGuardar()">
+      <div class="col-12 col-md-4">
+        <label for="tipo" class="form-label">Tipo</label>
+        <select id="tipo" class="form-select" formControlName="tipo">
+          <option value="CASA">CASA</option>
+          <option value="TRABAJO">TRABAJO</option>
+          <option value="OTRO">OTRO</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input id="direccion" type="text" class="form-control" formControlName="direccion" />
+        @if (form.controls.direccion.touched && form.controls.direccion.invalid) {
+          <div class="invalid-feedback d-block">La dirección es obligatoria.</div>
+        }
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="ciudad" class="form-label">Ciudad</label>
+        <input id="ciudad" type="text" class="form-control" formControlName="ciudad" />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="region" class="form-label">Región</label>
+        <input id="region" type="text" class="form-control" formControlName="region" />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="codigoPostal" class="form-label">Código postal</label>
+        <input id="codigoPostal" type="text" class="form-control" formControlName="codigoPostal" />
+      </div>
+
+      <div class="col-12 d-flex justify-content-end gap-2 mt-2">
+        <button type="button" class="btn btn-outline-light" (click)="onCancelar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="cargando">
+          {{ cargando ? 'Guardando...' : 'Guardar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

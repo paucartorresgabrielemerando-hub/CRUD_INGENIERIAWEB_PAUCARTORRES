@@ -1,0 +1,54 @@
+<div class="surface">
+  <div class="surface-header">
+    <div class="d-flex align-items-center justify-content-between">
+      <div>
+        <div class="h5 mb-0">{{ modo() === 'editar' ? 'Editar empleo' : 'Agregar empleo' }}</div>
+        <div class="text-muted small">Historial laboral (dependiente de Persona)</div>
+      </div>
+      <button type="button" class="btn btn-outline-light btn-sm" (click)="onCancelar()">Cerrar</button>
+    </div>
+  </div>
+
+  <div class="surface-body">
+    <form [formGroup]="form" class="row g-3" (ngSubmit)="onGuardar()">
+      <div class="col-12 col-md-6">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input id="empresa" type="text" class="form-control" formControlName="empresa" />
+        @if (form.controls.empresa.touched && form.controls.empresa.invalid) {
+          <div class="invalid-feedback d-block">La empresa es obligatoria.</div>
+        }
+      </div>
+
+      <div class="col-12 col-md-6">
+        <label for="cargo" class="form-label">Cargo</label>
+        <input id="cargo" type="text" class="form-control" formControlName="cargo" />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="fechaInicio" class="form-label">Fecha inicio</label>
+        <input id="fechaInicio" type="date" class="form-control" formControlName="fechaInicio" />
+        @if (form.controls.fechaInicio.touched && form.controls.fechaInicio.invalid) {
+          <div class="invalid-feedback d-block">La fecha de inicio es obligatoria.</div>
+        }
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="fechaFin" class="form-label">Fecha fin</label>
+        <input id="fechaFin" type="date" class="form-control" formControlName="fechaFin" />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label for="salario" class="form-label">Salario</label>
+        <input id="salario" type="number" class="form-control" formControlName="salario" step="0.01" min="0" />
+      </div>
+
+      <div class="col-12 d-flex justify-content-end gap-2 mt-2">
+        <button type="button" class="btn btn-outline-light" (click)="onCancelar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" [disabled]="cargando">
+          {{ cargando ? 'Guardando...' : 'Guardar' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="app-shell">
+  <aside class="app-sidebar">
+    <div class="app-brand">
+      <div class="app-brand__logo">MVC</div>
+      <div class="app-brand__text">
+        <div class="app-brand__title">CRM Personas</div>
+        <div class="app-brand__subtitle">Demo CRUD</div>
+      </div>
+    </div>
+
+    <nav class="app-nav" aria-label="Navegación principal">
+      <a routerLink="/personas" routerLinkActive="is-active" class="app-nav__item">Personas</a>
+      <a routerLink="/correos" routerLinkActive="is-active" class="app-nav__item">Correos</a>
+      <a routerLink="/direcciones" routerLinkActive="is-active" class="app-nav__item">Direcciones</a>
+      <a routerLink="/empleos" routerLinkActive="is-active" class="app-nav__item">Empleos</a>
+    </nav>
+
+    <div class="app-sidebar__footer">
+      <div class="small text-muted">API: https://localhost:5000</div>
+    </div>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-topbar">
+      <div class="app-topbar__title">Mantenimiento</div>
+      <div class="app-topbar__meta">Gestión de datos relacionados a Persona</div>
+    </header>
+
+    <section class="app-content">
+      <router-outlet />
+    </section>
+  </main>
+</div>
+

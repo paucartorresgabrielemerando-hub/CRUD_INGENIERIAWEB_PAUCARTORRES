@@ -1,0 +1,4 @@
+Los select están en:
+
+- Tipo de documento.
+- Selección de persona en las pestañas. 

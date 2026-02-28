@@ -1,0 +1,106 @@
+.page-personas {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0.75rem 2rem;
+  background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.25), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(8, 47, 73, 0.35), transparent 55%),
+    #020617;
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.8);
+}
+
+.card-body {
+  padding: 1.25rem 1.25rem 1.15rem;
+}
+
+.table-wrapper {
+  padding: 0.25rem;
+}
+
+table {
+  margin-bottom: 0;
+  color: #e5e7eb;
+}
+
+thead th {
+  border-bottom-width: 1px;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(15, 23, 42, 0.98);
+}
+
+tbody tr:hover {
+  background-color: rgba(30, 64, 175, 0.35);
+}
+
+.form-label {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.form-control {
+  background-color: rgba(15, 23, 42, 0.98);
+  border-color: rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+}
+
+.form-control::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.form-control:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.7);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  border: none;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-outline-secondary {
+  border-color: rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+
+.btn-outline-secondary:hover {
+  background-color: rgba(15, 23, 42, 0.9);
+}
+
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1040;
+}
+
+.modal-custom {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 95vw);
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1050;
+}
